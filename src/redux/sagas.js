@@ -1,0 +1,18 @@
+import { all } from 'redux-saga/effects';
+import authSagas from './auth/saga';
+// import todoSagas from './todo/saga';
+import chatSagas from './chat/saga';
+import surveyListSagas from './surveyList/saga';
+import surveyDetailSagas from './surveyDetail/saga';
+import channelProfile from './channelProfile/sagas'
+
+export default function* rootSaga(getState) {
+  yield all([
+    authSagas(),
+    // todoSagas(),
+    channelProfile(),
+    chatSagas(),
+    surveyListSagas(),
+    surveyDetailSagas()
+  ]);
+}
